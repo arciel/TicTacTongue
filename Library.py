@@ -23,4 +23,4 @@ def isCross(x, y):
     assert (x >= 0 and x <= 2 and y >= 0 and y <= 2);
     return Grid[x][y] == 'X'
     
-    
+# Just wanted you to read these. Now, head to ExtendedAPI.py.
