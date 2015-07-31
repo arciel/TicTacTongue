@@ -14,6 +14,10 @@ Visit the files in the following order:
 
 Your job is to go through the files and complete ExtendedAPI.py and Game.py. 
 
+## Dependencies
+
+You need to have Python 2.7.x installed on your system.
+
 
 
 
