@@ -8,7 +8,7 @@ Functions.py; but, they will help when you finally get to completing Game.py
 # without that too. The thing (maybe good, maybe bad) about many things in the
 # world is, you don't have to know what something is - only what it does.
 
-from Functions.py import Grid; # Don't remove! 
+from Functions import Grid; # Don't remove! 
 
 def put(x, y):
     """This function puts a '0' at position (x, y)."""
