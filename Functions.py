@@ -11,8 +11,21 @@ Reading code can be a little dry - but don't give up! Read this file, please.
 
 """
 
-# We're setting up an empty 3x3 grid. The game shall be played here.
+# A function is a set of instructions. Now, why do we use functions? A very 
+# common example is this - say you want to do something that takes a couple of
+# instructions (say 10). And you want to do it many times, at different places 
+# in your code. 
 
+# Now, if you make a function of those instructions, instead of 
+# writing those same (or similar) 10 lines everywhere in your code, you can 
+# write the 10 lines once, and CALL the FUNCTION of those 10 lines everywhere.
+
+# Calling a function takes only one line, so, if you needed that code in 20 
+# places, instead of 200 lines, you use only 21. This makes reading and 
+# maintaining code much easier and better.  
+
+
+# We're setting up an empty 3x3 grid. The game shall be played here.
 
 Grid = [[' ',' ',' '],[' ',' ',' '],[' ',' ',' ']]  
 
@@ -69,7 +82,7 @@ def crossesInRowTwo():
 # to write THREE nearly identical functions! Obviously, programming is not so 
 # boring (if it was, nobody would be doing it). Can you think of a trick? 
 
-# What if I can TELL the function WHICH row it should look in? 
+# What if I can TELL the function which row it should look in? 
 # This is a very important concept called PASSING AN ARGUMENT to a function.
 # An argument is a piece of information, like an integer, that we give to an 
 # entity, like a function, which helps the function perform. Here's an example.
