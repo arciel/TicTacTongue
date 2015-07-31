@@ -204,9 +204,39 @@ def lost():
 # arguments. Remember that in Tic-Tac-Tongue, this function was called 'put'.
 
 def put(x, y):
-    # Simplest. Function. Ever. Probably even unnecessary.
-    Grid[x][y] = 'O'
+    """Simply puts a '0' at position (x, y) on the Grid."""
+    while (x > 2): 
+        x = int(raw_input("Please enter an 'x' in {0, 1, 2}: "))
+    while (y > 2):    
+        y = int(raw_input("Please enter a 'y' in {0, 1, 2}: "))
+    # Simplest. Function. Ever. Probably even unnecessary.    
+    Grid[x][y] = '0'
     # But we're doing it because we want to implement the TicTacTongue language. 
 
+# The other function mentioned in the syntax was isCross. Also very simple.
+# See how it was all so simple? We're nice like that. ;)
+
+def isCross(x, y):
+    """This function returns True if there is an X at (x, y)."""
+    while (x > 2): 
+        x = int(raw_input("Please enter an 'x' in {0, 1, 2}: "))
+    while (y > 2):    
+        y = int(raw_input("Please enter a 'y' in {0, 1, 2}: "))
+    #Also the Simplest. Function. Ever.    
+    return (Grid[x][y] == 'X')
 
 
+# This should be very easy -> implement all the methods once again, but using 
+# isCross. 
+    
+# Now, you have used if, while, isCross and put. So, did you use TicTacTongue,
+# or Python? Haha. Well, rest assured, you actually used Python. TicTacTongue, 
+# can conceptually be a language, but, it really is a very trivial library, 
+# written in Python. 
+
+# A library is basically a set of functions (and other stuff) that extend the 
+# functionality of a language. You write a library so that if you ever have to 
+# use that code again, you don't have to re-write it. And you can share it with
+# others, who won't have to write it from scratch.
+
+# After this, head to ExtendedAPI.py! 
