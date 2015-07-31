@@ -43,7 +43,7 @@ def crossesInRowZero():
     """This function returns the number of Xs in row zero (0).""" 
     count = 0                           # This will count the number of X's in the row.
     index = 0                           # This is the column index in row 0. 
-    while (index < 3):                  # While loop starts.---<----------<---   
+    while (index < 3):                  # While loop starts.   <----------<---   
         if (Grid[0][index] == 'X'):     # If there's an X at (0, index) ...   ^
             count = count + 1           # ... increase count by 1.             ^
         else:                           # If there isn't an X at (0, index) .. ^
