@@ -16,14 +16,14 @@ Reading code can be a little dry - but don't give up! Read this file, please.
 # May or may not be true for individual lines. Sometimes, two or even three 
 # instructions can be on one line. But we'll assume there's just one per line.
 
-# A function is a set of instructions. Now, why do we use functions? A very 
-# common example is this - say you want to do something that takes a couple of
-# instructions (say 10). And you want to do it many times, at different places 
-# in your code. 
+# A function (or a method) is a set of instructions. Now, why do we use 
+# functions? A very common example is this - say you want to do something that 
+# takes a couple of instructions (say 10). And you want to do it many times, 
+# at different places in your code. 
 
 # Now, if you make a function of those instructions, instead of 
 # writing those same (or similar) 10 lines everywhere in your code, you can 
-# write the 10 lines once, and CALL the FUNCTION of those 10 lines everywhere.
+# write the 10 lines once, and CALL the function of those 10 lines everywhere.
 
 # Calling a function takes only one line, so, if you needed that code in 20 
 # places, instead of 200 lines, you use only 21. This makes reading and 
@@ -34,7 +34,6 @@ Reading code can be a little dry - but don't give up! Read this file, please.
 
 Grid = [[' ',' ',' '],[' ',' ',' '],[' ',' ',' ']]  
 
-
 # Basically, we created 3 rows, each row containing 3 empty boxes. And then,
 # we stacked those rows upon one-another. Remember, numbering of rows as well as
 # columns starts from 0. 
@@ -42,15 +41,15 @@ Grid = [[' ',' ',' '],[' ',' ',' '],[' ',' ',' ']]
 
 def crossesInRowZero():
     """This function returns the number of Xs in row zero (0).""" 
-    count = 0                           #This will count the number of X's in the row.
-    index = 0                                 #This is the column index in row 0. 
-    while (index < 3):                            #While loop starts.   <------<---   
-        if (Grid[0][index] == 'X'):              #If there's an X at (0, index) ... ^
-            count = count + 1                   #... increase count by 1.            ^
-        else:                                 #If there isn't an X at (0, index) ... ^
-            pass                            #... do nothing.                         ^ 
-        index = index + 1                  #Either way, now look at the next box.    ^
-             # Follow this arrow for the next iteration.  ---->----------->---------^ 
+    count = 0                           # This will count the number of X's in the row.
+    index = 0                           # This is the column index in row 0. 
+    while (index < 3):                 #  While loop starts.---<----------<---   
+        if (Grid[0][index] == 'X'):    #  If there's an X at (0, index) ...   ^
+            count = count + 1          #  ... increase count by 1.             ^
+        else:                         #  If there isn't an X at (0, index) ... ^
+            pass                      #  ... do nothing.                       ^ 
+        index = index + 1             #  Either way, now look at the next box. ^
+    #    Follow this arrow for the next iteration.  ---->----------->---------^ 
     
     # We've looked at all boxes in row 0. Now index = 3. We're out of the loop.
     return count                                                 # We are done!
@@ -110,9 +109,104 @@ def crossesInRowK(k):
             pass
         index = index + 1          
     return count 
+
+# It is important that you understand how crossesInRowK works, because, we'll
+# use it from now on. Let's use it to calculate threat in a row. This also 
+# demonstrates how a function can also call, and be called by, another function.          
      
-     
-def threatPresent():  
-    """This function will detect if there is a threat present or not."""
+def threatPresent(k):  
+    """This function will return True if there is a threat in row k."""
+    nX = crossesInRowK(k)
+    if (nX >= 2):
+        return True;
+    else:
+        return False;
+
+# Now, we can use our knowledge so far to detect if we're under threat or not.
+
+def boardFacesThreat():
+    """This function will return True if there is a threat on board."""
+    if (threatPresent(0) or threatPresent(1) or threatPresent(2)):
+         return True
+    else:
+        return False        
+
+# Basically, we say that if either row 0 or row 1 or row 2 have a threat, then
+# we're under threat. 
+
+# ---------------------------------------------------------------------------
+
+# At this point, please try writing your own function to count the number of 
+# crosses in a column. The function should be called crossesInColK, and it 
+# should take in an argument that tells it which column to check. 
+
+# Easy challenge - Try making a function for each diagonal too. Our versions:
+
+def crossesInColK(k):
+    """This function will return the number of Xs in column k."""
+    while (k > 2):      
+        k = int(raw_input("Please enter a value in {0, 1, 2}: "))  
+    count = 0
+    index = 0
+    while (index < 3):
+        if (Grid[index][k] == 'X'): 
+            count = count + 1      
+        else:
+            pass
+        index = index + 1          
+    return count 
     
+
+def crossesInDiag1():   # The Top-Left -> Bottom-Right diagonal (main diagonal).
+    """This function will return the number of Xs in the main diagonal."""
+    count = 0
+    index = 0
+    while (index < 3):
+        if (Grid[index][index] == 'X'):
+            count = count + 1
+        else:
+            pass
+        index = index + 1
+    return count
     
+def crossesInDiag2():   # The other diagonal.
+    """This function will return the number of Xs in the other diagonal."""
+    count = 0
+    i = 0
+    while (i < 3):
+        if (Grid[i][2-i] == 'X'): # What if we replace Grid[i][2-i] with Grid[2-i][i]?
+            count = count + 1
+        else:
+            pass
+        i = i + 1
+    return count
+    
+# Based on all you've done so far, can you write a function to see if you lost?   
+
+def lost():
+    """This function will return True if we have lost the game."""
+    i = 0
+    while (i < 3):
+        if (crossesInRowK(i) == 3):
+            return True
+        elif (crossesInColK(i) == 3):                          # Else, If {...}
+            return True
+        else:
+            pass
+    if (crossesInDiag1 == 3 or crossesInDiag2 == 3):
+        return True
+    else:
+        return False
+    
+# Phew. These were all, umm, 'checker' methods. Now let's actually make something
+# to play. Let's make a function that can put a 0 on the Grid, if we give it 
+# the coordinates. This is an instance of a function that takes in multiple 
+# arguments. Remember that in Tic-Tac-Tongue, this function was called 'put'.
+
+def put(x, y):
+    # Simplest. Function. Ever. Probably even unnecessary.
+    Grid[x][y] = 'O'
+    # But we're doing it because we want to implement the TicTacTongue language. 
+
+
+
