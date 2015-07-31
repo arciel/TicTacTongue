@@ -5,6 +5,6 @@ here, for Game.py.
 
 """
 
-import Library.py; # Don't remove!
+from Library import *; # Don't remove!
 
 # After doing that, head to the showdown. Game.py.
