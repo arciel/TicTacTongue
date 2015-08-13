@@ -16,6 +16,7 @@ Visit the files in the following order:
 * Functions.py
 * Library.py
 * ExtendedAPI.py
+* Defensive Strategy.py
 * Game.py
 
 Your job is to go through the files and complete ExtendedAPI.py and Game.py. 
