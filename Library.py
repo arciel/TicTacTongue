@@ -8,16 +8,14 @@ Functions.py; but, they will help when you finally get to completing Game.py
 # without that too. The thing (maybe good, maybe bad) about many things in the
 # world is, you don't have to know what something is - only what it does.
 
-from Functions import Grid; # Don't remove! 
-
-def put(x, y):
+def put(Grid, x, y):
     """This function puts a '0' at position (x, y)."""
     assert (type(x) == type(y) == int);
     assert (x >= 0 and x <= 2 and y >= 0 and y <= 2);
     Grid[x][y] = '0'
     
 
-def isCross(x, y):
+def isCross(Grid, x, y):
     """This function returns True if there is an X at position (x, y)."""
     assert (type(x) == type(y) == int);
     assert (x >= 0 and x <= 2 and y >= 0 and y <= 2);

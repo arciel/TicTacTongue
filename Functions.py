@@ -93,7 +93,7 @@ def crossesInRowTwo():
 # entity, like a function, which helps the function perform. Here's an example.
 
 
-def crossesInRowK(k):
+def crossesInRow(k):
     """This function returns the number of Xs in row 'k'."""
     # k is an integer in the set {0, 1, 2}. So, depending on k, we can get
     # the number of Xs in rows 0, 1, and 2. Here's how.
@@ -116,7 +116,7 @@ def crossesInRowK(k):
      
 def threatPresent(k):  
     """This function will return True if there is a threat in row k."""
-    nX = crossesInRowK(k)
+    nX = crossesInRow(k)
     if (nX >= 2):
         return True;
     else:
@@ -142,7 +142,7 @@ def boardFacesThreat():
 
 # Easy challenge - Try making a function for each diagonal too. Our versions:
 
-def crossesInColK(k):
+def crossesInCol(k):
     """This function will return the number of Xs in column k."""
     while (k > 2):      
         k = int(raw_input("Please enter a value in {0, 1, 2}: "))  
@@ -187,12 +187,13 @@ def lost():
     """This function will return True if we have lost the game."""
     i = 0
     while (i < 3):
-        if (crossesInRowK(i) == 3):
+        if (crossesInRow(i) == 3):
             return True
-        elif (crossesInColK(i) == 3):                          # Else, If {...}
+        elif (crossesInCol(i) == 3):                          # Else, If {...}
             return True
         else:
             pass
+        i += 1
     if (crossesInDiag1 == 3 or crossesInDiag2 == 3):
         return True
     else:
