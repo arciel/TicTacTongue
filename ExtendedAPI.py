@@ -9,7 +9,7 @@ from Library import *; # Don't remove!
 
 # You may need this method:
 
-def printToConsole():
+def printToConsole(Grid):
     """ This method prints the Grid onto the screen."""
     for i in range(0, 3):
         print("   |   |   ")
@@ -43,14 +43,6 @@ def zerosInRowK(k):
             pass
         index = index + 1          
     return count         
-
-
-def boardFacesThreat_Us():
-    """This function will return True if there is a threat on board."""
-    if (threatPresent(0) or threatPresent(1) or threatPresent(2)):
-         return True
-    else:
-        return False        
         
 
 def zerosInColK(k):
@@ -99,7 +91,7 @@ def weLost():
     while (i < 3):
         if (zerosInRowK(i) == 3):
             return True
-        elif (zerosColK(i) == 3):                          # Else, If {...}
+        elif (zerosInColK(i) == 3):                          # Else, If {...}
             return True
         else:
             pass
