@@ -2,6 +2,7 @@
 \usepackage{authblk}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
 
 \title{Recursion, Game Trees and Classes - Making an unbeatable algorithm.}
 
@@ -37,11 +38,17 @@ In the last session, we talked about functions. We'll start this session by talk
 
 So far, we've looked at various tools, like functions, recursion and lists,
 which will help us in our analysis of the game. Let us now start working with
-a more concrete idea, that of a $game\ state$. \\
+a more concrete idea, that of \textit{game states}. \\
 
-\noindent Imagine a game of Tic-Tac-Toe played between Alice and Bob. Alice is playing zeros (O) and Bob is playing crosses (X). \\
+\noindent Imagine a game of Tic-Tac-Toe played between Alice and Bob. Alice is playing crosses (X) and Bob is playing zeros (O). \\
 
 \noindent Here is an example of how such a game might proceed, if Alice plays first:
+
+\begin{center}
+    \includegraphics[scale=0.11]{AliceVBob}
+\end{center}
+
+\noindent And so on.
 
 \section{Classes}
 
