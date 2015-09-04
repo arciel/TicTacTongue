@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{listings}
 \usepackage{placeins}
+\usepackage{amssymb}
 
 \title{Recursion, Game Trees and Classes - Making an unbeatable algorithm.}
 
@@ -80,7 +81,9 @@ def mult(a, b):
 \end{figure}
 \FloatBarrier
 
-\noindent Hopefully that example made it very clear what recursion is. In a way, you could compare the example with \textit{iteration}, or, in programming, the class of constructs called \textit{loops}. It's a very valid parallel to draw. However, even though there are many instances where a problem that can be solved using iteration can also be solved using recursion (and vice versa), there's a certain sense in which recursion and iteration seem, fundamentally different.
+\noindent Hopefully that example made it very clear what recursion is. In a way, you could compare the example with \textit{iteration}, or, in programming, the class of constructs called \textit{loops}. It's a very valid parallel to draw.\\
+
+\noindent However, even though there are many instances where a problem that can be solved using iteration can also be solved using recursion (and vice versa), there's a certain sense in which recursion and iteration seem, fundamentally different.
 
 \begin{itemize}
 \item The basic idea behind \underline{iteration} is to:
@@ -120,7 +123,24 @@ def mult(a, b):
 
 \noindent What we gave you is a very CS-centric view of recursion. Howver, recursion is not fundamentally a programming construct. It's very well defined mathematically too, and that foundation is often useful in CS, especially in the study of algorithms that work recursively. You'll be surprised to know that some of the most efficient algorithms that we know of, are recursive in nature - they are often called \textit{divide and conquer} algorithms. \\
 
-Here, check out these Wikipedia articles - \cite{Recursion in CS} \cite{Divide and Conquer}. In fact, whenever you start learning something new - anything, a new software, a programming language, a new poem, whatever - it's always good to know a little about the story and history of the thing. Even though you may not understand everything, or even most things, it'll only add to your experience. 
+\noindent Here, check out these Wikipedia articles on Recursion\cite{Recursion in CS} and the Divide and Conquer paradigm\cite{Divide and Conquer}. \underline{Detour}: In fact, whenever you start learning something new - anything, a new software, a programming language, a new poem, whatever - it's always good to know a little about the story and history of the thing. Even though you may not understand everything, or even most things, it'll only add to your experience. \\
+
+\noindent Just for closure, let's talk a bit about some mathematical functions that are often defined recursively. 
+
+\subsection{Factorial} 
+
+\noindent This is quite the archetype of a recursively defined mathematical function. It takes in a single argument, $n$, and returns the product of all the natural numbers from $1$ to $n$ (both inclusive). By convention, we denote the factorial of $n$ by $n!$, and $0! = 1$. Here's the formal definition. 
+
+\begin{displaymath}
+    n! = \left\{
+    \begin{array}{lr}
+        1 & \ \ n = 0\\
+        n\cdot (n-1) & \ \ n \neq 0\\
+    \end{array}
+    \right.
+\end{displaymath} 
+
+\noindent \underline{Exercise}: Try to make a recursion graphic, similar to the one shown earlier in the document, for $n!$ ($n \in \mathbb{N}$). You can find a lot more on the internet about the factorial than what can be presented here. Be sure to check it out.
 
 \section{Lists}
 
@@ -170,6 +190,6 @@ Wikipedia.
 Wikipedia.
 \textit{Divide and conquer algorithms - Wikipedia, the free encyclopedia}
 \texttt{https://en.wikipedia.org/wiki/Divide\_and\_conquer\_algorithms}
-
-
 \end{thebibliography}
+
+\end{document}
