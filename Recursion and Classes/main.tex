@@ -125,7 +125,7 @@ def mult(a, b):
 
 \noindent Here, check out these Wikipedia articles on Recursion\cite{Recursion in CS} and the Divide and Conquer paradigm\cite{Divide and Conquer}. \underline{Detour}: In fact, whenever you start learning something new - anything, a new software, a programming language, a new poem, whatever - it's always good to know a little about the story and history of the thing. Even though you may not understand everything, or even most things, it'll only add to your experience. \\
 
-\noindent Just for closure, let's talk a bit about some mathematical functions that are often defined recursively. 
+\noindent Just for closure, let's talk a bit about a mathematical function that is often defined recursively. 
 
 \subsection{Factorial} 
 
@@ -135,12 +135,14 @@ def mult(a, b):
     n! = \left\{
     \begin{array}{lr}
         1 & \ \ n = 0\\
-        n\cdot (n-1) & \ \ n \neq 0\\
+        n\cdot (n-1)! & \ \ n \neq 0\\
     \end{array}
     \right.
 \end{displaymath} 
 
-\noindent \underline{Exercise}: Try to make a recursion graphic, similar to the one shown earlier in the document, for $n!$ ($n \in \mathbb{N}$). You can find a lot more on the internet about the factorial than what can be presented here. Be sure to check it out.
+\noindent \underline{Exercise}: Try to make a recursion graphic, similar to the one shown earlier in the document, for $n!$ ($n \in \mathbb{N}$). You can find a lot more on the internet about the factorial than what can be presented here. Be sure to check it out. \\
+
+\noindent This ends our discussion about recursive functions, for now. If you wish to delve deeper into the details, please do so! Let's now continue to build our toolkit. Let's talk about lists. 
 
 \section{Lists}
 
