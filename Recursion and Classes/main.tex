@@ -80,6 +80,48 @@ def mult(a, b):
 \end{figure}
 \FloatBarrier
 
+\noindent Hopefully that example made it very clear what recursion is. In a way, you could compare the example with \textit{iteration}, or, in programming, the class of constructs called \textit{loops}. It's a very valid parallel to draw. However, even though there are many instances where a problem that can be solved using iteration can also be solved using recursion (and vice versa), there's a certain sense in which recursion and iteration seem, fundamentally different.
+
+\begin{itemize}
+\item The basic idea behind \underline{iteration} is to:
+    \begin{enumerate}
+    \item Identify that the problem involves performing a \textit{similar series of steps} on the data. 
+    \item Note that the data has an inherently sequential structure, which can be exploited to solve the problem. 
+    \item Perform all those steps \textit{serially} on the data, and stop when we're done (that is, a certain condition is reached). 
+    \end{enumerate}
+\item The basic idea behind \underline{recursion} is to:
+    \begin{enumerate}
+    \item Break down a problem into successively smaller and smaller problems.
+    \item Compute the solution to the smallest possible problems that can be \textit{easily} solved (the \textit{base} case), and 
+    \item Finally combine the solutions to the smaller problems to get solutions for successively bigger ones - and eventually, for the biggest (original) one. 
+    \end{enumerate}  
+\end{itemize}
+
+\noindent There are several obvious differences. Can you think of some of them? Just off the top of your head. It's an interesting thing to think about. Here's an analogy. Say you want to calculate this product: $2\cdot 3\cdot 4\cdot 5$. 
+
+\begin{itemize}
+\item Say you decide to follow these steps.
+    \begin{enumerate} 
+    \item \ \ \ \ $2\cdot 3 = 6$. 
+    \item \ \ \ \ $6\cdot 4 = 24$.
+    \item \ \ \ \ $24\cdot 5 = 120$.
+    \end {enumerate}
+    And done.
+\item Alternatively, you could just as well do. 
+    \begin{enumerate}
+    \item \ \ \ \ $2\cdot 3 = 6$.
+    \item \ \ \ \ $4\cdot 5 = 20$.
+    \item \ \ \ \ Combining the first two steps, $6\cdot 20 = 120$.
+    \end{enumerate}
+    And done too!
+\end{itemize}
+
+\noindent See? Two different approaches to solving the same problem. Here, the distinction between an iterative approach and a recursive approach is even starker. It would be more so, say, if we had $2^10$ numbers that we wanted to multiply. \\
+
+\noindent What we gave you is a very CS-centric view of recursion. Howver, recursion is not fundamentally a programming construct. It's very well defined mathematically too, and that foundation is often useful in CS, especially in the study of algorithms that work recursively. You'll be surprised to know that some of the most efficient algorithms that we know of, are recursive in nature - they are often called \textit{divide and conquer} algorithms. \\
+
+Here, check out these Wikipedia articles - \cite{Recursion in CS} \cite{Divide and Conquer}. In fact, whenever you start learning something new - anything, a new software, a programming language, a new poem, whatever - it's always good to know a little about the story and history of the thing. Even though you may not understand everything, or even most things, it'll only add to your experience. 
+
 \section{Lists}
 
 \section{Trees}
@@ -113,11 +155,21 @@ a more concrete idea, that of \textit{game states}. \\
 \subsection{Relating game states to game trees}
 
 \begin{thebibliography}{9}
-\bibitem{DSinPres_Slide}
+\bibitem{DSinPres_Slide} {
 Tushar Rakheja and Shibjash Dutt.
 \textit{"CS. What it is, what it isn't, and why you should care."}
 \texttt{https://github.com/EndoflineComputerClub/TicTacTongue.}
-\\PresentationCS.pptx, slide 11. 
-\end{thebibliography}
+\\PresentationCS.pptx, slide 11. }
 
-\end{document}
+\bibitem{Recursion in CS} 
+Wikipedia.
+\textit{Recursion (computer science) - Wikipedia, the free encyclopedia}
+\texttt{https://en.wikipedia.org/wiki/Recursion\_(computer\_science)}
+
+\bibitem{Divide and Conquer} 
+Wikipedia.
+\textit{Divide and conquer algorithms - Wikipedia, the free encyclopedia}
+\texttt{https://en.wikipedia.org/wiki/Divide\_and\_conquer\_algorithms}
+
+
+\end{thebibliography}
