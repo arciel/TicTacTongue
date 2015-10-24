@@ -45,7 +45,7 @@ while (not gameEnd(Grid)):      # While we can still play.
                     while (j < 3 and (not stopLooking)):
                         print ("trapped in j1")
                         if (not isCross(Grid, i, j)):     # If this block in this row is empty
-                            put(Grid, i, j)               # Block the threat by putting an X here.
+                            put(Grid, i, j)               # Block the threat by putting a 0 here.
                             stopLooking = True            # We can stop looking now.
                             break                         # Stop looking at any more blocks.
                         j += 1                            # Increment j to check the next block (if needed).
