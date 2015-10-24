@@ -26,7 +26,7 @@ while (not gameEnd(Grid)):      # While we can still play.
             i = int(raw_input("Row should be between 0 and 2: "))
         while (j < 0 or j > 2):
             j = int(raw_input("Col should be between 0 and 2: "))
-        while (isCross(Grid, i, j) or isCross(Grid, i, j)):
+        while (isCross(Grid, i, j) or isZero(Grid, i, j)):
             print "Please enter unoccupied coordinates"
             i = int(raw_input("Enter X in row __ : "))
             j = int(raw_input("Enter X in column __: "))
