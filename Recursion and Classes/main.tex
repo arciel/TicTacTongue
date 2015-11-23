@@ -146,6 +146,35 @@ def mult(a, b):
 
 \section{Lists}
 
+Lists in Python are pretty much what you'd expect them to be. Lists. They can contain anything, with some sense of order. 
+
+A list is a simple \textit{data structure}, and like every data structure, it has an API, or a set of things it can do for you. Here's the only part of its API we'll need. 
+
+\begin{itemize}
+    \item Initialize: You can initialize an empty list this way: 
+        \begin{lstlisting}[language=Python]
+        >>> example = [] # 'example' is the name of the list.
+        \end{lstlisting}
+    Of course, the list list doesn't have to be empty:
+        \begin{lstlisting}[language=Python]
+        >>> example = ['TRex', 1]
+        \end{lstlisting}
+    \item Append: You can append (insert at the end of the list) a certain element. Consider the nonempty initialized list in the previous point: 
+        \begin{lstlisting}[language=Python]
+        >>> example.append(2)
+        >>> example 
+        ['TRex', 1, 2]
+        \end{lstlisting}
+    \item Remove: Actually, we may not even need remove, but one should know how to undo what they've done.
+        \begin{lstlisting}[language=Python]
+        >>> example.remove(1)
+        ['TRex', 2]
+        \end{lstlisting}
+    \item Length
+    \item Contains
+\end{itemize}
+
+
 \section{Trees}
 
 \section{Game states} 
