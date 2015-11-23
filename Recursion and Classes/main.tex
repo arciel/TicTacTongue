@@ -146,34 +146,58 @@ def mult(a, b):
 
 \section{Lists}
 
-Lists in Python are pretty much what you'd expect them to be. Lists. They can contain anything, with some sense of order. 
+Lists in Python are pretty much what you'd expect them to be: Lists. They can contain anything, with some sense of order. \\
 
-A list is a simple \textit{data structure}, and like every data structure, it has an API, or a set of things it can do for you. Here's the only part of its API we'll need. 
+\noindent A list is a simple \textit{data structure}, and like every data structure, it has an API, or a set of things it can do for you. Here's the only part of its API we'll need, along with some other useful functions that are not really exclusive to lists. Note that we'll use a running list through all points (changes we make will be preserved from one point to the next).
 
 \begin{itemize}
-    \item Initialize: You can initialize an empty list this way: 
+    \item \textbf{Initialize}: You can initialize an empty list this    way: 
         \begin{lstlisting}[language=Python]
-        >>> example = [] # 'example' is the name of the list.
+            >>> example = [] # 'example' is the name of the list.
         \end{lstlisting}
-    Of course, the list list doesn't have to be empty:
+        Of course, the list list doesn't have to be empty:
         \begin{lstlisting}[language=Python]
-        >>> example = ['TRex', 1]
+            >>> example = ['TRex', 1]
         \end{lstlisting}
-    \item Append: You can append (insert at the end of the list) a certain element. Consider the nonempty initialized list in the previous point: 
+    \item \textbf{Append}: You can append (insert at the end of the     list) a certain element. Consider the nonempty initialized list in the previous point:     
         \begin{lstlisting}[language=Python]
-        >>> example.append(2)
-        >>> example 
-        ['TRex', 1, 2]
+            >>> example.append(2)
+            >>> example 
+            ['TRex', 1, 2]
         \end{lstlisting}
-    \item Remove: Actually, we may not even need remove, but one should know how to undo what they've done.
+    \item \textbf{Remove}: Actually, we may not even need remove, but   one should know how to undo what they've done.
         \begin{lstlisting}[language=Python]
-        >>> example.remove(1)
-        ['TRex', 2]
+            >>> example.remove(1)
+            ['TRex', 2]
         \end{lstlisting}
-    \item Length
-    \item Contains
+    \item \textbf{Length}: If you want the length of any list, just say:
+        \begin{lstlisting}[language=Python]
+            >>> len(example)
+            2
+            >>> len([1, 2, 3])
+            3
+        \end{lstlisting}
+    \textit{Note}: The \texttt{len} operator is not exclusive to lists. It works with many other data structures too. 
+    \item \textbf{Contains}: What if you want to check if a certain         element belongs to a list or not? Easy, you just do:
+        \begin{lstlisting}[language=Python]
+            >>> 'TRex' in example
+            True
+            >>> 2 in example
+            True
+            >>> 3 in example
+            False
+        \end{lstlisting}
+    Note that the \texttt{in} operator returns a boolean value (T/F), hence it can be used as a condition inside \texttt{if} statements.
+        \begin{lstlisting}[language=Python]
+            >>> if ('Yo' in ['Yo', 'Rex']):
+                    print("Yo Rex!")
+                
+            Yo Rex!
+        \end{lstlisting}
+    \textit{Note}: Like \texttt{len}, the \texttt{in} operator is not exclusive to lists. It works with many other data structures too. 
 \end{itemize}
 
+\noindent That's all we'll need for lists. Try playing around a little with these nice structures and commands. You'll be surprised at what one can make using just lists!
 
 \section{Trees}
 
