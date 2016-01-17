@@ -39,11 +39,9 @@ while (not gameEnd(Grid)):      # While we can still play.
             i = 0                              # The first row we check will be row 0. This is asymmetric. Any suggestions?
             stopLooking = False                # We'll stop looking for rows when we find one under threat.      
             while (i < 3 and (not stopLooking)):
-                print ("trapped in i")
                 if (threatInRow(Grid, i)):             # Found the row under threat.
                     j = 0
                     while (j < 3 and (not stopLooking)):
-                        print ("trapped in j1")
                         if (not isCross(Grid, i, j)):     # If this block in this row is empty
                             put(Grid, i, j)               # Block the threat by putting a 0 here.
                             stopLooking = True            # We can stop looking now.

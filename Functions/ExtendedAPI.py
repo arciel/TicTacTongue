@@ -58,7 +58,7 @@ def zerosInRow(Grid, k):
     index = 0
     while (index < 3):
         if (isZero(Grid, k, index)): # We're looking at row 'k', which can be ..
-            count = count + 1       # .. any row, really. We chose the 'k'.   
+            count = count + 1        # .. any row, really. We chose the 'k'.   
         else:
             pass
         index = index + 1          
@@ -75,7 +75,7 @@ def crossesInRow(Grid, k):
     index = 0
     while (index < 3):
         if (isCross(Grid, k, index)): # We're looking at row 'k', which can be ..
-            count = count + 1       # .. any row, really. We chose the 'k'.   
+            count = count + 1         # .. any row, really. We chose the 'k'.   
         else:
             pass
         index = index + 1          
