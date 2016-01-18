@@ -190,6 +190,18 @@ def weLost(Grid):
     else:
         return False
 
+def draw(Grid):
+    """This function will return True if the game is a draw."""
+    if (weLost(Grid) or lost(Grid)):
+	return False
+    i = 0
+    while (i < 3):
+	j = 0
+	while (j < 3):
+	    if (Grid[i][j] != 'X' and Grid[i][j] != '0'):
+		return False
+    return True 
+
 def gameEnd(Grid):
     """ This function returns True if the game has ended """
     return weLost(Grid) or lost(Grid)    # The game ends when someone loses (or wins).
