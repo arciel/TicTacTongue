@@ -204,7 +204,7 @@ def draw(Grid):
 
 def gameEnd(Grid):
     """ This function returns True if the game has ended """
-    return weLost(Grid) or lost(Grid)    # The game ends when someone loses (or wins).
+    return (weLost(Grid) or lost(Grid) or draw(Grid))    # The game ends when someone loses (or wins).
 
 
 # After doing that, head to the showdown. Game.py.
