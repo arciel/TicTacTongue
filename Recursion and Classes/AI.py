@@ -26,7 +26,7 @@ while (first_move or (not game_end(state.grid))):
         else:
             Grid[1][1] = '0'
             print("\nEarth's Mightiest Zeros: ")
-        state = Gamestate(Grid, not zeros_move)
+        state = Gamestate(Grid, not zeros_move, 1)
         state.make_states()                                         # Generate the game tree.
         state.calculate_value()                                     # Compute each state's value.
         first_move = False
