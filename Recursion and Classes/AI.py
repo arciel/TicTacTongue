@@ -24,7 +24,7 @@ while (first_move or (not game_end(state.grid))):
             Grid[i][j] = 'X'
             print("\nYou: ")
         else:
-            Grid[1][1] = '0'
+            Grid[0][0] = '0'
             print("\nEarth's Mightiest Zeros: ")
         state = Gamestate(Grid, not zeros_move, 1)
         state.make_states()                                         # Generate the game tree.
