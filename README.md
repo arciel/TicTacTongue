@@ -28,7 +28,8 @@ Visit the files in the following order:
 * Gamestate.py
 * AI.py	
 
-AI.py is the file that you need to run, to play against the Earth's Mightiest Zeros.				
+AI.py is the file that you need to run, to play against the Earth's Mightiest Zeros. To run it from
+the command line, type in `python AI.py`.			
 
 ## Dependencies
 
