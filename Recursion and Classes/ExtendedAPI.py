@@ -158,7 +158,7 @@ def boardFacesThreat(Grid):
         return True
     return False
     
-def lost(Grid):
+def zeros_lost(Grid):
     """This function will return True if we have lost the game."""
     i = 0
     while (i < 3):
@@ -174,7 +174,7 @@ def lost(Grid):
     else:
         return False
 
-def weLost(Grid):
+def ttp_lost(Grid):
     """This function will return True if we have lost the game."""
     i = 0
     while (i < 3):
@@ -192,7 +192,7 @@ def weLost(Grid):
 
 def draw(Grid):
     """This function returns a draw if the game ends in a draw."""
-    if (weLost(Grid) or lost(Grid)):
+    if (ttp_lost(Grid) or zeros_lost(Grid)):
         return False
     for i in range(3):
         for j in range(3):
@@ -200,8 +200,6 @@ def draw(Grid):
                 return False
     return True
 
-def gameEnd(Grid):
+def game_end(Grid):
     """ This function returns True if the game has ended """
-    return (draw(Grid) or lost(Grid) or weLost(Grid))
-
-# After doing that, head to the showdown. Game.py.
+    return (draw(Grid) or zeros_lost(Grid) or ttp_lost(Grid))
